@@ -7,4 +7,16 @@
     icon2: #6995B1: фейсбук хочер
     icon3: #9C9C9C: серый 
     */
+
+    --width-container: 1770px;
+}
+
+.container {
+    box-sizing: content-box;
+    /* 540 - 18px 1920px - 75px*/
+    --pad-container: clamp(1.125rem, -0.26888rem + 4.13vw, 4.6875rem);
+    margin-inline: auto;
+    max-width: var(--width-container);
+    padding-left: var(--pad-container);
+    padding-right: var(--pad-container);
 }
