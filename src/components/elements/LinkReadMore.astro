@@ -1,0 +1,48 @@
+---
+interface Props {
+	link: string;
+}
+
+const { link } = Astro.props;
+---
+<a class="item-link text-uppercase transition" href={link}>Read more</a>
+
+<style>
+        .item-link {
+        display: inline-block;
+        font-family: var(--font-Inter);
+        font-weight: 700;
+        font-size: .875rem;
+        color: var(--color-black);
+    }
+
+    .item-link::after {
+        background-color: var(--color-green);
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0%;
+        transition: width .3s ease-in-out;
+    }
+
+    .item-link:is(:hover, :focus) {
+        color: var(--color-green);
+    }
+
+    .item-link:is(:hover, :focus)::after {
+        width: 100%;
+    }
+
+    @media (hover: hover) {
+.item-link:hover {
+    color: var(--color-green);
+}
+}
+
+@media (hover: none) {
+.item-link:active {
+    color: var(--color-green);
+}
+}
+
+</style>

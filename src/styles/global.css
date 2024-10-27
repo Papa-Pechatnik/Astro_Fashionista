@@ -2,21 +2,66 @@
 @import url("./fonts.css");
 
 :root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-green: #2d7064;
+
+    --font-Fraunces: "Fraunces-VF", "Fraunces", Georgia, "Century Schoolbook L", serif;
+    --font-Anybody: "Anybody-VF", "Anybody", "Arial Black", "Gadget", "Nimbus Sans L", sans-serif;
+    --font-Inter: "Inter-VF", "Inter", "Tahoma", "Geneva", "Kalimati", sans-serif;
     /* 
     icon1: #191919: черный
     icon2: #6995B1: фейсбук хочер
     icon3: #9C9C9C: серый 
     */
 
-    --width-container: 1770px;
+    --width-container: 1806px;
+    --indent-min: 18px;
+}
+
+body {
+    background: var(--color-white);
+    color: var(--color-black);
 }
 
 .container {
     box-sizing: content-box;
     /* 540 - 18px 1920px - 75px*/
-    --pad-container: clamp(1.125rem, -0.26888rem + 4.13vw, 4.6875rem);
+    --pad-container: 30px;
     margin-inline: auto;
     max-width: var(--width-container);
     padding-left: var(--pad-container);
     padding-right: var(--pad-container);
+    /* border: 2px solid green; */
+}
+
+.box-small {
+    --box-width: 576px;
+    max-width: var(--box-width);
+    width: 100%;
+    padding-left: var(--indent-min);
+    padding-right: var(--indent-min);
+}
+
+
+.line-clamp {
+    --line: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--line);
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.transition {
+    transition: all 0.7s ease;
 }
