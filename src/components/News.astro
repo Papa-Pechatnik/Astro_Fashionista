@@ -2,9 +2,10 @@
 import Advantages from "./Advantages.astro";
 import { Image } from "astro:assets";
 import photo from "./assets/images/kuva10.jpg";
+import photo2 from "./assets/images/kuva8.jpg";
 ---
 <section class="news">
-    <!-- <h2 class="news-title">
+    <h2 class="news-title">
         <marquee class="title-marquee1" scrollamount="25">
             fashionista collections latest diva
         </marquee>
@@ -14,9 +15,9 @@ import photo from "./assets/images/kuva10.jpg";
         <marquee class="title-marquee3" scrollamount="40" direction="right">
             black&white minimal offers carnival
         </marquee>
-    </h2> -->
+    </h2>
     <div class="container">
-        <!-- <Advantages/> -->
+        <Advantages />
         <main class="arrivals">
             <header class="box-med">
                 <div class="arrivals-content">
@@ -26,30 +27,34 @@ import photo from "./assets/images/kuva10.jpg";
                             nec sagittis, mauris quisque pellentesque tincidunt.
                         </h4>
                         <p class="arrivals-content__text">
-                            Elit, volutpat donec et risus. Sit pellentesque tincidunt tortor, erat tortor eget quis sapien. Nunc tellus egestas nulla ullamcorper pellentesque molestie nec. Gravida eget quam diam non. Iaculis pretium platea magna sed diam diam orci enim. Scelerisque accumsan quam sit nibh in porta non rutrum orci.
+                            Elit, volutpat donec et risus. Sit pellentesque tincidunt tortor, erat tortor eget quis
+                            sapien. Nunc tellus egestas nulla ullamcorper pellentesque molestie nec. Gravida eget quam
+                            diam non. Iaculis pretium platea magna sed diam diam orci enim. Scelerisque accumsan quam
+                            sit nibh in porta non rutrum orci.
                         </p>
-                        <a class="arrivals-content__link" href="#">Shop it now</a>
+                        <a class="arrivals-content__link" href="#">Shop it now
+                            <i class="icon-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </header>
             <section class="box-lg">
                 <div class="arrivals-photo">
-                    <Image class="arrivals-photo__img" src={photo} width={537} height={953} alt="iii" />
-                    <h3 class="arrivals-photo__title">
-                        New arrivals 2021
-                        <!-- <marquee class="title-marquee" scrollamount="6">
-                            <span class="text-capitalize">
-                                
-                        </marquee> -->
-                    </h3>
+                    <div>
+                        <Image class="arrivals-photo__img" src={photo} width={537} height={953} alt="iii" />
+                    </div>
 
+                    <h3 class="arrivals-photo__title">
+                        <marquee class="title-marquee" scrollamount="6" direction="up">
+                            <span class="text-capitalize">
+                                New arrivals 2021
+                        </marquee>
+                    </h3>
                 </div>
             </section>
             <section class="box-small arrivals-photo2">
                 <div class="box-xs">
-
-                    <Image class="arrivals-photo2__img" src={photo} width={268} height={468} alt="iii" />
-
+                    <Image class="arrivals-photo2__img" src={photo2} width={268} height={468} alt="iii" />
                 </div>
             </section>
         </main>
@@ -61,7 +66,6 @@ import photo from "./assets/images/kuva10.jpg";
     .news {
         width: 100%;
         margin-bottom: clamp(3.75rem, -2.0741rem + 17.2566vw, 8.625rem);
-        height: max-content;
     }
 
     .news-title {
@@ -77,11 +81,14 @@ import photo from "./assets/images/kuva10.jpg";
         color: Var(--color-green);
     }
 
-
     .arrivals {
         display: flex;
         justify-content: space-between;
         gap: var(--indent-min);
+    }
+
+    .arrivals .box-lg {
+        align-self: flex-end;
     }
 
     .arrivals-content {
@@ -90,6 +97,9 @@ import photo from "./assets/images/kuva10.jpg";
     }
 
     .arrivals-content-box {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
         max-width: 504px;
         min-width: 420px;
     }
@@ -101,7 +111,6 @@ import photo from "./assets/images/kuva10.jpg";
         font-weight: 700;
         font-size: 36px;
         line-height: 140%;
-
     }
 
     .arrivals-content__text {
@@ -111,22 +120,32 @@ import photo from "./assets/images/kuva10.jpg";
     }
 
     .arrivals-content__link {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
         width: 228px;
         height: 77px;
         border-radius: .375rem;
-        border: 2 px solid var(--color-grey-dark);
+        border: 2px solid var(--color-grey-dark);
+        transition: all 1s ease-out;
+    }
 
+    .arrivals-content__link:hover {
+        color: var(--color-white);
+        background-color: var(--color-green);
+        border-color: var(--color-black);
     }
 
     .arrivals-photo {
         display: flex;
         justify-content: center;
-        /* min-width: 624px; */
+        align-items: flex-end;
+        min-width: 420px;
     }
 
     .arrivals-photo__img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         aspect-ratio: 537 / 953;
         object-fit: cover;
@@ -135,24 +154,48 @@ import photo from "./assets/images/kuva10.jpg";
     .arrivals-photo__title {
         font-family: var(--font-Anybody);
         font-weight: 700;
-        font-size: 86px;
+        font-size: clamp(2.625rem, -4.0613rem + 10.7843vw, 5.375rem);
         line-height: 100%;
         color: var(--color-black);
         writing-mode: vertical-rl;
     }
 
-
-
     .arrivals-photo2 {
         display: flex;
         justify-content: end;
         align-items: end;
-        /* min-width: 420px; */
     }
 
     .arrivals-photo2__img {
         max-width: 100%;
         aspect-ratio: 268 / 468;
         object-fit: cover;
+    }
+
+    @media screen and (max-width: 1199.98px) {
+        .arrivals-photo2 {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 991.98px) {
+        .arrivals-photo {
+            display: none;
+        }
+
+        .arrivals {
+            max-width: 100%;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .arrivals .box-med {
+            display: flex;
+            justify-content: center;
+        }
+
+        .arrivals .box-lg {
+            display: none;
+        }
     }
 </style>

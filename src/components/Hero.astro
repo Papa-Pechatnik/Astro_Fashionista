@@ -66,18 +66,18 @@ import slide3 from "./assets/images/kuva3.jpg";
     .hero::before {
         z-index: -1;
         position: absolute;
-content: "Trends";
-font-family: var(--font-Fraunces);
-font-weight: 100;
-font-size: var(--font-big);
-line-height: 100%;
-letter-spacing: -0.05em;
-text-transform: capitalize;
-text-align: center;
-color: var(--color-white-smoke);
-top:0;
-left: 50%;
-transform: translate(-50%, 0);
+        content: "Trends";
+        font-family: var(--font-Fraunces);
+        font-weight: 100;
+        font-size: var(--font-big);
+        line-height: 100%;
+        letter-spacing: -0.05em;
+        text-transform: capitalize;
+        text-align: center;
+        color: var(--color-white-smoke);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 
     .hero-title {
@@ -101,7 +101,7 @@ transform: translate(-50%, 0);
             ". content ."
             "slide1 slide2 slide3";
         margin-top: clamp(1.75rem, 0.1136rem + 4.8485vw, 3.75rem);
-        margin-bottom: 235px;
+        margin-bottom: clamp(2.25rem, -5.5596rem + 23.1395vw, 14.6875rem);
     }
 
     .hero-content {
@@ -226,9 +226,10 @@ transform: translate(-50%, 0);
     @media screen and (max-width: 767.98px) {
         .hero::before {
             font-size: clamp(12.5rem, 3.5515rem + 44.7427vw, 25rem);
-            top:30%;
+            top: 30%;
             transform: translate(-50%, -50%);
         }
+
         .hero-box {
             grid-template-areas:
                 "content content content"
