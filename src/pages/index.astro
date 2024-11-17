@@ -1,13 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from "../components/Hero.astro";
+import News from '../components/News.astro';
 import AnnouncementBlog from '../components/AnnouncementBlog.astro';
+import LatestNews from '../components/LatestNews.astro';
 
 ---
 
 <Layout title="Start">
-	<main>
-<AnnouncementBlog/>
+	<Header/>
+	<main class="main flex-col-centr">
+		<Hero/>
+		<!-- <News/> -->
+		<!-- <AnnouncementBlog/> 
+		<LatestNews/> -->
 	</main>
 </Layout>
+
+<style>
+	.main {
+		margin-inline: auto;
+	}
+</style>
 
 

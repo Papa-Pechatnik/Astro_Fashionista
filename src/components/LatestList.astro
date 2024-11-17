@@ -1,0 +1,109 @@
+---
+interface Props {
+    id: number;
+}
+
+const {id} = Astro.props;
+
+const latest = [
+    [
+        {
+            title: "top 10 casual look ideas to dress up your kids",
+            rubric: "tips & tricks",
+            link: "#",
+        },
+        {
+            title: "Latest trends of wearing street wears supremely",
+            rubric: "trending",
+            link: "#",
+        },
+        {
+            title: "types of comfortable clothes ideas for women",
+            rubric: "inspiration",
+            link: "#",
+        },
+    ],
+    [
+        {
+            title: "Casual Outfits",
+            rubric: "tips & tricks",
+            link: "#",
+        },
+        {
+            title: "Donna Karan Spring 2025: Pushing a Legacy Forward",
+            rubric: "trending",
+            link: "#",
+        },
+        {
+            title: "Women's Christmas Shop",
+            rubric: "inspiration",
+            link: "#",
+        },
+    ],
+
+]
+---
+
+<ul class="latest-list box-small">
+    { latest[id].map((item) =>
+    <li class="latest-item">
+        <h5 class="latest-item__title">
+            <a class="latest-item__title-link text-capitalize" href={item.link}>
+                {item.title}
+            </a>
+        </h5>
+        <h6 class="latest-item__subtitle text-uppercase">
+            {item.rubric}
+        </h6>
+    </li>
+    )}
+</ul>
+
+<style>
+    .latest-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.375rem;
+    }
+
+    .latest-item__title-link {
+        font-family: var(--font-Anybody);
+        font-weight: 700;
+        font-size: 1.625rem;
+        line-height: 145%;
+        letter-spacing: -0.02em;
+        color: var(--color-black);
+    }
+
+    .latest-item__title-link:is(:hover, :focus) {
+        color: var(--color-green);
+    }
+
+    .latest-item__subtitle {
+        font-family: var(--font-Inter);
+        font-weight: 500;
+        font-size: .875rem;
+        letter-spacing: 0.15em;
+        color: var(--color-grey2);
+        margin-top: .75rem;
+    }
+
+    @media (hover: hover) {
+        .latest-item__title-link:is(:hover, :focus) {
+            color: var(--color-green);
+        }
+    }
+
+    @media (hover: none) {
+        .latest-item__title-link:is(:hover, :focus) {
+            color: var(--color-green);
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+    .latest-list {
+            max-width: 100%;
+        }
+    }
+
+</style>

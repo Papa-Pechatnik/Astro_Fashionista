@@ -1,0 +1,260 @@
+---
+import { Image } from "astro:assets";
+import slide1 from "./assets/images/kuva1.jpg";
+import slide2 from "./assets/images/kuva2.jpg";
+import slide3 from "./assets/images/kuva3.jpg";
+
+---
+<section class="hero">
+    <div class="container">
+        <h1 class="hero-title text-capitalize">fashionista</h1>
+        <div class="hero-box">
+            <article class="hero-content box-lg flex-col-centr padding-left_min padding-right_min">
+                <b class="hero-content__title">
+                    FASHIONISTA-tiimi on suunniteltu tyydyttämään tyttöjen muotihimo. Takaamme, että UUSI IN -osio on suosikkisi sivustolla. Täällä julkaisemme kaikki uudet tulokkaat, jotka ovat tarjouksessamme, kaikki mehukkaimmat ja tuoreimmat. Täällä voit tutustua trendeihin, uusimpiin trendeihin ja mielenkiintoisiin ratkaisuihin
+                </b>
+                <p class="hero-content__text">
+                    FASHIONISTA-tiimi on intohimoinen uusien tuotteiden etsimiseen, mielenkiintoisten mallien kehittämiseen, siluettien leikkaamiseen, kangasprinttien jne. Rakastamme chattailua fashionistagirljemme kanssa, katsoa jousiasi Instassa ja kaupungin kaduilla, inspiroitua niistä, ja siksi lupaamme nöyrästi täydentää tätä osiota säännöllisesti.
+                </p> 
+            </article>
+            <section class="slide1 slide box-med flex-col-centr padding-left_min padding-right_min">
+                <div class="slide-box">
+                    <header class="slide-header">
+                        <p class="slide-header__number">01</p>
+                        <p class="slide-header__title text-uppercase">Black Combo set</p>
+                    </header>
+                    <div class="slide-img-box">
+                        <Image class="slide-img" src={slide1} alt="" width="667" height="883" />
+                    </div>
+                </div>
+            </section>
+            <section class="slide2 slide box-lg flex-col-centr padding-left_min padding-right_min">
+                <div class="slide-box">
+                    <header class="slide-header">
+                        <p class="slide-header__number">02</p>
+                        <p class="slide-header__title text-uppercase">Black Combo set</p>
+                    </header>
+                    <div class="slide-img-box">
+                        <Image class="slide-img" src={slide2} alt="" width="667" height="883" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide3 slide box-small flex-col-centr padding-left_min padding-right_min">
+                <div class="slide-box">
+                    <header class="slide-header">
+                        <p class="slide-header__number">03</p>
+                        <p class="slide-header__title text-uppercase">Black Combo set</p>
+                    </header>
+                    <div class="slide-img-box">
+                        <Image class="slide-img" src={slide3} alt="" width="667" height="883" />
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        z-index: -1;
+        position: absolute;
+content: "Trends";
+font-family: var(--font-Fraunces);
+font-weight: 100;
+font-size: var(--font-big);
+line-height: 100%;
+letter-spacing: -0.05em;
+text-transform: capitalize;
+text-align: center;
+color: var(--color-white-smoke);
+top:0;
+left: 50%;
+transform: translate(-50%, 0);
+    }
+
+    .hero-title {
+        font-family: var(--font-Fraunces);
+        font-weight: 700;
+        font-size: clamp(3.375rem, -4.6486rem + 23.7736vw, 19.125rem);
+        line-height: 100%;
+        color: var(--color-black);
+        text-align: center;
+    }
+
+    .hero-box {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: space-between;
+        justify-items: center;
+        align-items: end;
+        gap: var(--indent-min);
+        grid-template-areas:
+            ". content ."
+            "slide1 slide2 slide3";
+        margin-top: clamp(1.75rem, 0.1136rem + 4.8485vw, 3.75rem);
+        margin-bottom: 235px;
+    }
+
+    .hero-content {
+        grid-area: content;
+        font-family: var(--font-family);
+        color: var(--color-grey-dark);
+        gap: 32px;
+        margin-bottom: clamp(2.25rem, -0.5114rem + 8.1818vw, 5.625rem);
+    }
+
+    .hero-content__title {
+        font-weight: 700;
+        font-size: clamp(1.5rem, 1.0909rem + 1.2121vw, 2rem);
+        line-height: 140%;
+    }
+
+    .hero-content__text {
+        font-weight: 300;
+        font-size: clamp(0.75rem, 0.4432rem + 0.9091vw, 1.125rem);
+        line-height: 180%;
+    }
+
+    .slide {
+        max-height: 100%;
+        /* height: 100%; */
+    }
+
+    .slide-box {
+        max-height: inherit;
+        height: inherit;
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .slide-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+    }
+
+    .slide1 {
+        grid-area: slide1;
+
+    }
+
+    .slide1>.slide-box {
+        max-width: 478px;
+    }
+
+    .slide1 .slide-img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 448 / 634;
+        object-fit: cover;
+    }
+
+    .slide2 {
+        grid-area: slide2;
+    }
+
+    .slide2>.slide-box {
+        max-width: 667px;
+    }
+
+    .slide2 .slide-img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 668 / 834;
+        object-fit: cover;
+    }
+
+    .slide3 {
+        grid-area: slide3;
+    }
+
+    .slide3>.slide-box {
+        max-width: 336px;
+    }
+
+    .slide3 .slide-img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 336 / 505;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 1199.98px) {
+        .hero-box {
+            grid-template-areas:
+                "content content slide3"
+                "slide1 slide2 slide2";
+        }
+    }
+
+    @media screen and (max-width: 991.98px) {
+        .hero-box {
+            grid-template-areas:
+                "content content content"
+                "slide1 slide2 slide2";
+        }
+
+        .hero-content {
+            gap: 16px;
+        }
+
+        .slide1>.slide-box {
+            min-width: 280px;
+        }
+
+        .slide2>.slide-box {
+            min-width: 280px;
+        }
+
+        .slide3 {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .hero::before {
+            font-size: clamp(12.5rem, 3.5515rem + 44.7427vw, 25rem);
+            top:30%;
+            transform: translate(-50%, -50%);
+        }
+        .hero-box {
+            grid-template-areas:
+                "content content content"
+                "slide1 slide1 slide1";
+        }
+
+        .slide {
+            /* max-height: 100%; */
+            height: 100%;
+        }
+
+        .slide2 {
+            display: none;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content__title {
+            line-height: 100%;
+
+        }
+
+        .hero-content__text {
+            line-height: 140%;
+        }
+    }
+</style>

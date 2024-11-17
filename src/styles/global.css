@@ -1,14 +1,21 @@
 @import url("./normalize.css");
 @import url("./fonts.css");
-
 :root {
     --color-white: #ffffff;
+    --color-white-smoke: #ecf2f1;
+    --color-gainsboro: #d8d8d8;
     --color-black: #000000;
+    --color-black-light: #222222;
     --color-green: #2d7064;
+    --color-grey-dark: #333333;
+    --color-gray: #747474;
+    --color-grey2: #999999;
+    
 
     --font-Fraunces: "Fraunces-VF", "Fraunces", Georgia, "Century Schoolbook L", serif;
     --font-Anybody: "Anybody-VF", "Anybody", "Arial Black", "Gadget", "Nimbus Sans L", sans-serif;
     --font-Inter: "Inter-VF", "Inter", "Tahoma", "Geneva", "Kalimati", sans-serif;
+    --font-big: clamp(46.875rem, 8.7894rem + 53.4535vw, 69.125rem);
     /* 
     icon1: #191919: черный
     icon2: #6995B1: фейсбук хочер
@@ -26,23 +33,49 @@ body {
 
 .container {
     box-sizing: content-box;
-    /* 540 - 18px 1920px - 75px*/
-    --pad-container: 30px;
+    /* 540 - 16px 767px - 30px*/
+    --pad-container: clamp(1rem, -1.0815rem + 6.1674vw, 1.875rem);
     margin-inline: auto;
     max-width: var(--width-container);
+    /* width: 100%; */
     padding-left: var(--pad-container);
     padding-right: var(--pad-container);
-    /* border: 2px solid green; */
 }
 
-.box-small {
-    --box-width: 576px;
-    max-width: var(--box-width);
-    width: 100%;
+.padding-left_min {
     padding-left: var(--indent-min);
+}
+
+.padding-right_min {
     padding-right: var(--indent-min);
 }
 
+
+.flex-col-centr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-lg {
+    max-width: 732px;
+    width: 100%;
+}
+
+.box-med {
+    max-width: 576px;
+    width: 100%;
+}
+
+.box-small {
+    max-width: 420px;
+    width: 100%;
+}
+
+.box-xs {
+    max-width: 264px;
+    width: 100%;
+}
 
 .line-clamp {
     --line: 2;

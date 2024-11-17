@@ -1,0 +1,229 @@
+---
+import { Image } from "astro:assets";
+import photo from "./assets/images/kuva2.jpg";
+import LatestList from "./LatestList.astro";
+
+---
+<section class="latest">
+    <div class="latest-in">
+        <p class="latest-background">2021</p>
+        <div class="container">
+            <div class="latest-wrap">
+                <section class="latest-box box-med">
+                    <LatestList id={0} />
+                </section>
+                <section class="latest-box box-med">
+                    <div class="latest-img-box">
+                        <div class="latest-img">
+                            <Image class="latest-img__img" src={photo} width={387} height={580} alt="iii" />
+                        </div>
+                        <h3 class="latest-img__title">
+                            <marquee class="title-marquee text-capitalize" scrollamount="6">
+                                Latest news
+                            </marquee>
+                        </h3>
+                    </div>
+                </section>
+                <section class="latest-box box-med">
+                    <LatestList id={1} />
+                </section>
+            </div>
+        </div>
+    </div>
+
+</section>
+<style>
+    .latest {
+        position: relative;
+        --var-percent: 0.75;
+        margin-bottom: clamp(3.5rem, -2.7099rem + 12.9542vw, 8.625rem);
+        margin-top: clamp(1.25rem, -16.6224rem + 37.2828vw, 16rem);
+    }
+
+    .latest-in {
+        height: calc(var(--var-percent) * var(--font-big));
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        overflow-x: hidden;
+    }
+
+    .latest-background {
+        z-index: -1;
+        position: absolute;
+        font-family: var(--font-Fraunces);
+        font-weight: 100;
+        font-size: var(--font-big);
+        line-height: var(--var-percent);
+        letter-spacing: -0.05em;
+        color: var(--color-white-smoke);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+    }
+
+
+    .latest-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: var(--indent-min);
+        row-gap: calc(3 * var(--indent-min));
+    }
+
+    .latest-box {
+        display: flex;
+        padding-left: clamp(1rem, -2.2178rem + 4.2904vw, 2.625rem);
+        padding-right: clamp(1rem, -2.2178rem + 4.2904vw, 2.625rem);
+    }
+
+    .latest-box:nth-child(3n+1) {
+        justify-content: end;
+    }
+
+    .latest-box:nth-child(3n+2) {
+        justify-content: center;
+
+    }
+
+    .latest-box:nth-child(3n+3) {
+        justify-content: start;
+    }
+
+    .latest-img-box {
+        display: flex;
+    }
+
+    .latest-img {
+        min-width: 20rem;
+    }
+
+    .latest-img__img {
+        max-width: 100%;
+        aspect-ratio: 387 / 580;
+        object-fit: cover;
+    }
+
+    .latest-img__title {
+        --temp-var: clamp(3.25rem, 1.2934rem + 4.0816vw, 5.375rem);
+        width: var(--temp-var);
+        font-family: var(--font-Anybody);
+        font-weight: 700;
+        font-size: var(--temp-var);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--color-black);
+        writing-mode: vertical-lr;
+        text-align: center;
+    }
+
+    @media (hover: hover) {
+        .latest-item__title-link:is(:hover, :focus) {
+            color: var(--color-green);
+        }
+    }
+
+    @media (hover: none) {
+        .latest-item__title-link:is(:hover, :focus) {
+            color: var(--color-green);
+        }
+    }
+
+    @media screen and (max-width: 1139.98px) {
+        .latest-in {
+            height: max-content;
+        }
+
+        .latest-background {
+            font-size: 26.25rem;
+            top: 0;
+            left: -35%;
+            transform: translate(0, 0) rotate(90deg);
+            text-align: center;
+        }
+
+        .latest-wrap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .latest-box:nth-child(3n+1),
+        .latest-box:nth-child(3n+3) {
+            justify-content: center;
+        }
+
+        .latest-box:nth-child(3n+2) {
+            justify-content: center;
+            align-items: center;
+            grid-row-start: 1;
+            grid-column-start: 2;
+
+            grid-row-end: 3;
+            grid-column-end: 3;
+        }
+
+        .latest-img-box {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: var(--indent-min);
+        }
+
+        .latest-img__title {
+            width: 100%;
+        }
+
+        .latest-img__title {
+            writing-mode: horizontal-tb;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .latest {
+            position: none;
+        }
+
+        .latest-background {
+            display: none;
+        }
+
+        .latest-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
+            justify-items: center;
+        }
+
+        .latest-box:nth-child(3n+2) {
+            grid-row-start: 1;
+            grid-column-start: 1;
+
+            grid-row-end: 2;
+            grid-column-end: 2;
+        }
+
+        .latest-box:nth-child(3n+1) {
+            grid-row-start: 2;
+            grid-column-start: 1;
+
+            grid-row-end: 3;
+            grid-column-end: 2;
+        }
+
+        .latest-box:nth-child(3n+3) {
+            grid-row-start: 3;
+            grid-column-start: 1;
+
+            grid-row-end: 4;
+            grid-column-end: 2;
+        }
+    }
+
+    @media screen and (max-width: 390px) {
+        .latest-img {
+            min-width: 100%;
+        }
+    }
+</style>

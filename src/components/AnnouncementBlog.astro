@@ -1,143 +1,86 @@
 ---
-import LinkReadMore from "./elements/LinkReadMore.astro";
-import { Image } from "astro:assets";
-import img from "../components/assets/images/Безымянный-1.jpg";
+import AnnouncementBlogCard from "./AnnouncementBlogCard.astro";
+
+const Blog = [
+    {
+    id: "1",
+    title: "Kierrättäminen kannattaa Merkkivaatteissa arvo säilyy todella hyvin",
+    rubric: "lookbooks",
+    pubDate: "16-03-2016",
+    description: "Suomessa käytettyjen vaatteiden ja kenkien kierrättäminen on todella helppoa, sillä kauppa käy vilkkaana netissä. Monien merkkivaatteiden jälleenmyynti on taattu, joskus jopa voitolla. Katso, mitkä merkit käyvät parhaiten kaupaksi käytettynä.",
+    link: "#",
+    imagePath: "./assets/images/kuva7.jpg",
+    imageAlt:"Nämä viime vuoden vaatetrendit",
+},
+
+{
+    id: "2",
+    title: "Nämä viime vuoden vaatetrendit jäävät nyt unholaan!",
+    rubric: "lookbooks",
+    pubDate: "10-01-2016",
+    description: "Viime vuosi tunnetaan erilaisista trendien sekoituksista. Yksi erikoisimmista trendeistä oli pesunkestävät terveyssandaalit vaatteiden kuin vaatteiden kanssa, mutta muoti jäänee tänä vuonna historiaan. Katso mitkä muut viime vuoden villitykset jäänevät unholaan.",
+    link: "#",
+    imagePath: "./assets/images/kuva4.jpg",
+    imageAlt:"Merkkivaatteissa arvo",
+},
+
+{
+    id: "3",
+    title: "Tässä on kevään muodikkain takki!",
+    rubric: "lookbooks",
+    pubDate: "10-02-2016",
+    description: "Päivien kirkastuessa ja lämmetessä untuvapomppa on aika vaihtaa keveämpään asuun. Aivan kesätamineisiin ei vielä Suomen keväässä voida siirtyä, mutta keveät mutta lämpimät kevättakit lämmittävät ihanasti ja istuvat ihanan tyylikkäästi paksujen toppavaatteiden jälkeen.",
+    link: "#",
+    imagePath: "./assets/images/kuva6.jpg",
+    imageAlt:"Tässä on kevään muodikkain takki",
+}
+
+];
+
 ---
 <section class="blog">
     <h2 class="title">
-        <marquee class="title-marquee" scrollamount="60">
-                    <span class="text-capitalize">look<span>Books</span>&ensp;</span>
-                    <span class="title__year text-uppercase">2023</span>
-         </marquee>
+        <marquee class="title-marquee" scrollamount="40">
+            <span class="text-capitalize">
+                look
+                <span>Books</span>
+                &ensp;
+            </span>
+            <span class="title__year text-uppercase">2021</span>
+        </marquee>
     </h2>
     <div class="container">
-    <ul class="blog-list">
-
-        <li class="item">
-
-            <header class="item-img box-small">
-                <a class="item-box item-box-link" href="#">
-                    <img class="item-img__img transition" src={img.src} alt="">
-                </a>
-            </header>
-
-            <article class="item-text box-small">
-                <div class="item-box">
-                    <header class="header">
-                        <div class="header-rubric text-uppercase">
-                            <h4>lookbooks</h4>
-                            <time datetime="">10.2016</time>
-                        </div>
-                        <h3 class="header-title line-clamp">
-                            <a class="header-title__link transition" href="">Boho wear Lookbook 2021</a>
-                        </h3>
-                    </header>
-                    <p class="header-text line-clamp">
-                        Eu, est arcu, vestibulum egestas quam ac sed egestas aliquet. Diam massa magnis mi, tortor, sit.
-                        Rhoncus phasellus habitant at turpis proin nibh suspendisse. Sodales parturient quisque purus
-                        pharetra massa et cras nulla commodo. Et condimentum egestas adipiscing nibh. Eu, est arcu,
-                        vestibulum egestas quam ac sed egestas aliquet. Diam massa magnis mi, tortor, sit. Rhoncus
-                        phasellus
-                        habitant at turpis proin nibh suspendisse. Sodales parturient quisque purus pharetra massa et
-                        cras
-                        nulla commodo. Et condimentum egestas adipiscing nibh.
-                    </p>
-                    <LinkReadMore link="#"/>
-                </div>
-
-            </article>
-
-        </li>
-        <li class="item">
-
-            <header class="item-img box-small">
-                <a class="item-box item-box-link" href="#">
-                    <img class="item-img__img transition" src={img.src} alt="">
-                </a>
-            </header>
-
-            <article class="item-text box-small">
-                <div class="item-box">
-                    <header class="header">
-                        <div class="header-rubric text-uppercase">
-                            <h4>lookbooks</h4>
-                            <time datetime="">10.2016</time>
-                        </div>
-                        <h3 class="header-title line-clamp">
-                            <a class="header-title__link transition" href="">Boho wear Lookbook 2021</a>
-                        </h3>
-                    </header>
-                    <p class="header-text line-clamp">
-                        Eu, est arcu, vestibulum egestas quam ac sed egestas aliquet. Diam massa magnis mi, tortor, sit.
-                        Rhoncus phasellus habitant at turpis proin nibh suspendisse. Sodales parturient quisque purus
-                        pharetra massa et cras nulla commodo. Et condimentum egestas adipiscing nibh. Eu, est arcu,
-                        vestibulum egestas quam ac sed egestas aliquet. Diam massa magnis mi, tortor, sit. Rhoncus
-                        phasellus
-                        habitant at turpis proin nibh suspendisse. Sodales parturient quisque purus pharetra massa et
-                        cras
-                        nulla commodo. Et condimentum egestas adipiscing nibh.
-                    </p>
-                    <LinkReadMore link="#"/>
-                </div>
-
-            </article>
-
-        </li>
-        <li class="item">
-
-            <header class="item-img box-small">
-                <a class="item-box item-box-link" href="#">
-                    <img class="item-img__img transition" src={img.src} alt="">
-                </a>
-            </header>
-
-            <article class="item-text box-small">
-                <div class="item-box">
-                    <header class="header">
-                        <div class="header-rubric text-uppercase">
-                            <h4>lookbooks</h4>
-                            <time datetime="">10.2016</time>
-                        </div>
-                        <h3 class="header-title line-clamp">
-                            <a class="header-title__link transition" href="">Boho wear Lookbook 2021</a>
-                        </h3>
-                    </header>
-                    <p class="header-text line-clamp">
-                        Eu, est arcu, vestibulum egestas quam ac sed egestas aliquet. Diam massa magnis mi, tortor, sit.
-                        Rhoncus phasellus habitant at turpis proin nibh suspendisse. Sodales parturient quisque purus
-                        pharetra massa et cras nulla commodo. Et condimentum egestas adipiscing nibh. Eu, est arcu,
-                        vestibulum egestas quam ac sed egestas aliquet. Diam massa magnis mi, tortor, sit. Rhoncus
-                        phasellus
-                        habitant at turpis proin nibh suspendisse. Sodales parturient quisque purus pharetra massa et
-                        cras
-                        nulla commodo. Et condimentum egestas adipiscing nibh.
-                    </p>
-                    <LinkReadMore link="#"/>
-                </div>
-
-            </article>
-
-        </li>
-    </ul>
+        <ul class="blog-list">
+            { Blog.map((item) =>
+            <AnnouncementBlogCard 
+                id={item.id} 
+                title={item.title} 
+                rubric={item.rubric} 
+                pubDate={item.pubDate}
+                description={item.description} 
+                link={item.link} 
+                imagePath={item.imagePath} 
+                imageAlt={item.imageAlt} />
+            )}
+        </ul>
     </div>
-
-
 </section>
 
+
 <style>
+    .blog {
+        max-width: 100%;
+    }
+
     .title {
         font-family: var(--font-Fraunces);
         font-weight: 400;
-        font-size: 14.8vw;
+        font-size: clamp(4.5rem, -6.5455rem + 32.7273vw, 18rem);
         line-height: 100%;
         letter-spacing: -0.06em;
         color: var(--color-green);
         text-align: center;
         text-wrap: nowrap;
-    }
-
-    .title-marquee {
-        width: 94.8vw;
     }
 
     .title__year {
@@ -150,181 +93,10 @@ import img from "../components/assets/images/Безымянный-1.jpg";
         gap: var(--indent-min);
     }
 
-    .item {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .item:nth-child(2n) {
-        flex-direction: column-reverse;
-        justify-content: end;
-    }
-
-    .item-box {
-        max-width: 412px;
-        width: 100%;
-        display: block;
-    }
-
-    .item-box-link {
-        border-radius: .625rem;
-        overflow: hidden;
-    }
-
-    .item-box-link:hover .item-img__img {
-        transform: scale(1.1);
-    }
-
-    .item-img {
-        display: flex;
-        justify-content: center;
-        line-height: 0;
-        margin-top: clamp(1.875rem, -3.45828rem + 11.111vw, 4.875rem);
-    }
-
-    .item-img__img {
-        max-width: 100%;
-        aspect-ratio: 1 / 1.5;
-        object-fit: cover;
-    }
-
-    .item-text {
-        display: flex;
-        justify-content: center;
-        margin-top: 3.75rem;
-        margin-bottom: 2.625rem;
-    }
-
-    .item:nth-child(2n) .item-text {
-        margin-bottom: 0;
-    }
-
-    .header-rubric {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: var(--font-Inter);
-        font-weight: 300;
-        font-size: .8125rem;
-        line-height: 160%;
-        color: var(--color-black);
-    }
-
-    .header-title {
-        font-family: var(--font-Anybody);
-        font-weight: 700;
-        font-size: clamp(2rem, 1.10414rem + 2.528vw, 3rem);
-        color: var(--color-black);
-        margin-top: 1.375rem;
-
-    }
-
-    .header-title.line-clamp {
-        --line: 3;
-    }
-
-    .header-title__link {
-        color: var(--color-black);
-
-    }
-
-    .header-title__link:hover {
-        color: var(--color-green);
-
-    }
-
-    .header-text {
-        font-family: var(--font-Inter);
-        font-weight: 300;
-        font-size: .8125rem;
-        line-height: 160%;
-        letter-spacing: 0.03em;
-        margin-top: clamp(1.875rem, -3.45828rem + 11.111vw, 4.875rem);
-        margin-bottom: 1.875rem;
-    }
-
-    .header-text.line-clamp {
-        --line: 5;
-    }
-
-
-
-    @media (hover: hover) {
-
-        .header-title__link:hover {
-            color: var(--color-green);
-        }
-    }
-
-    @media (hover: none) {
-
-        .header-title__link:hover {
-            color: var(--color-green);
-        }
-    }
-
-    @media screen and (max-width: 1199.98px) {
+    @media screen and (max-width: 1139.98px) {
         .blog-list {
             flex-direction: column;
-        }
-
-        .item {
-            flex-direction: row;
-        }
-
-        .item:nth-child(2n) {
-            flex-direction: row-reverse;
-        }
-
-        .item-img {
-            display: flex;
             justify-content: center;
-            line-height: 0;
-            margin-top: 1.875rem;
-        }
-
-        .item-img__img {
-            max-width: 100%;
-            aspect-ratio: 1 / 1.5;
-            object-fit: cover;
-        }
-
-        .item-text {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.875rem;
         }
     }
-
-    @media screen and (max-width: 767.98px) {
-        .title {
-        font-size: 13.8vw;
-    }
-        .item {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .item:nth-child(2n) {
-            flex-direction: column;
-        }
-
-        .item-text {
-            margin-top: 1.125rem;
-        }
-
-    .item:nth-child(2n) .item-text {
-        margin-bottom: 2.625rem;
-    }
-    }
-
-    
-    @media screen and (max-width: 575.98px) {
-        .title {
-        font-size: 11.8vw;
-    }
-}
 </style>
-

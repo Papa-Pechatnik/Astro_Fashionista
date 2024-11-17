@@ -1,0 +1,143 @@
+---
+const advantages = [
+    { title: "Free Delivery",
+        description: "Choose the shipping option that works best for you. No additional fees will incur.",
+    },
+    { title: "100% secure",
+        description: "Payments are protected by our partners Stripe and Paypal payment systems.",
+    },
+    { title: "Quality guarantee",
+        description: "We monitor and enforce the guaranteed standards relating to quality of supply.",
+    },
+]
+---
+<header class="advantages">
+    <ol class="advantages-list">
+        {
+        advantages.map(({title, description}) =>
+        <li class="advantages-item box-med padding-left_min padding-right_min">
+            <div>
+                <h4 class="advantages-item__title">{title}</h4>
+                <p class="advantages-item__description text-capitalize ">
+                    {description}
+                </p>
+            </div>
+        </li>
+        )}
+</header>
+
+<style>
+    .advantages {
+        display: flex;
+        justify-content: center;
+    }
+
+    .advantages-list {
+        max-width: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--indent-min);
+        justify-items: center;
+        list-style: none;
+        counter-reset: list-counter;
+        margin-top: 282px;
+        margin-bottom: 185px;
+    }
+
+    .advantages-item {
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        list-style-position: inside;
+        counter-increment: list-counter;
+        margin-top: 1.625rem;
+        margin-bottom: 1.625rem;
+    }
+
+    .advantages-item div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--indent-min);
+        max-width: 16.875rem;
+    }
+
+    .advantages-item::before {
+        content: "0"counter(list-counter);
+        font-family: var(--font-Fraunces);
+        font-weight: 400;
+        font-size: clamp(5rem, -3.0825rem + 12.6289vw, 11.125rem);
+        line-height: 1;
+        letter-spacing: -0.08em;
+        text-transform: capitalize;
+        color: var(--color-gainsboro);
+        margin-top: 0;
+        margin-right: 1.25rem;
+    }
+
+    .advantages-item:nth-child(3n+1) {
+        justify-content: end;
+    }
+
+    .advantages-item:nth-child(3n+2) {
+        justify-content: center;
+    }
+
+    .advantages-item:nth-child(3n+3) {
+        justify-content: start;
+    }
+
+    .advantages-item__title {
+        font-family: var(--font-Anybody);
+        font-weight: inherit;
+        font-size: clamp(1.5rem, 0.2843rem + 1.9608vw, 2rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--color-black-light);
+    }
+
+    .advantages-item__description {
+        font-family: var(--font-Fraunces);
+        font-weight: inherit;
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        text-transform: capitalize;
+        color: var(--color-gray);
+    }
+
+    @media screen and (max-width: 1199.98px) {
+        .advantages-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .advantages-item:nth-child(n) {
+            justify-content: start;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .advantages-item {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .advantages-list {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            justify-content: center;
+        }
+
+        .advantages-item:nth-child(n) {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .advantages-item {
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+    }
+</style>

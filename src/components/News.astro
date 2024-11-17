@@ -1,0 +1,158 @@
+---
+import Advantages from "./Advantages.astro";
+import { Image } from "astro:assets";
+import photo from "./assets/images/kuva10.jpg";
+---
+<section class="news">
+    <!-- <h2 class="news-title">
+        <marquee class="title-marquee1" scrollamount="25">
+            fashionista collections latest diva
+        </marquee>
+        <marquee class="title-marquee2" scrollamount="10">
+            <b class="news-title__title">designs </b>sale popular trendy
+        </marquee>
+        <marquee class="title-marquee3" scrollamount="40" direction="right">
+            black&white minimal offers carnival
+        </marquee>
+    </h2> -->
+    <div class="container">
+        <!-- <Advantages/> -->
+        <main class="arrivals">
+            <header class="box-med">
+                <div class="arrivals-content">
+                    <div class="arrivals-content-box">
+                        <h4 class="arrivals-content__title">
+                            Feugiat tellus metus lacus vulputate sed nec, feugiat at. Ac ultrices facilisis suspendisse
+                            nec sagittis, mauris quisque pellentesque tincidunt.
+                        </h4>
+                        <p class="arrivals-content__text">
+                            Elit, volutpat donec et risus. Sit pellentesque tincidunt tortor, erat tortor eget quis sapien. Nunc tellus egestas nulla ullamcorper pellentesque molestie nec. Gravida eget quam diam non. Iaculis pretium platea magna sed diam diam orci enim. Scelerisque accumsan quam sit nibh in porta non rutrum orci.
+                        </p>
+                        <a class="arrivals-content__link" href="#">Shop it now</a>
+                    </div>
+                </div>
+            </header>
+            <section class="box-lg">
+                <div class="arrivals-photo">
+                    <Image class="arrivals-photo__img" src={photo} width={537} height={953} alt="iii" />
+                    <h3 class="arrivals-photo__title">
+                        New arrivals 2021
+                        <!-- <marquee class="title-marquee" scrollamount="6">
+                            <span class="text-capitalize">
+                                
+                        </marquee> -->
+                    </h3>
+
+                </div>
+            </section>
+            <section class="box-small arrivals-photo2">
+                <div class="box-xs">
+
+                    <Image class="arrivals-photo2__img" src={photo} width={268} height={468} alt="iii" />
+
+                </div>
+            </section>
+        </main>
+
+    </div>
+</section>
+
+<style>
+    .news {
+        width: 100%;
+        margin-bottom: clamp(3.75rem, -2.0741rem + 17.2566vw, 8.625rem);
+        height: max-content;
+    }
+
+    .news-title {
+        font-family: var(--font-Fraunces);
+        font-weight: 400;
+        font-size: clamp(4.5rem, -6.5455rem + 32.7273vw, 18rem);
+        line-height: 100%;
+        letter-spacing: -0.05em;
+        color: var(--color-gainsboro);
+    }
+
+    .news-title__title {
+        color: Var(--color-green);
+    }
+
+
+    .arrivals {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--indent-min);
+    }
+
+    .arrivals-content {
+        font-family: var(--font-Fraunces);
+        color: var(--color-grey-dark);
+    }
+
+    .arrivals-content-box {
+        max-width: 504px;
+        min-width: 420px;
+    }
+
+
+    .arrivals-content__title {
+        width: 100%;
+        display: block;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 140%;
+
+    }
+
+    .arrivals-content__text {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 180%;
+    }
+
+    .arrivals-content__link {
+        display: block;
+        width: 228px;
+        height: 77px;
+        border-radius: .375rem;
+        border: 2 px solid var(--color-grey-dark);
+
+    }
+
+    .arrivals-photo {
+        display: flex;
+        justify-content: center;
+        /* min-width: 624px; */
+    }
+
+    .arrivals-photo__img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 537 / 953;
+        object-fit: cover;
+    }
+
+    .arrivals-photo__title {
+        font-family: var(--font-Anybody);
+        font-weight: 700;
+        font-size: 86px;
+        line-height: 100%;
+        color: var(--color-black);
+        writing-mode: vertical-rl;
+    }
+
+
+
+    .arrivals-photo2 {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        /* min-width: 420px; */
+    }
+
+    .arrivals-photo2__img {
+        max-width: 100%;
+        aspect-ratio: 268 / 468;
+        object-fit: cover;
+    }
+</style>
