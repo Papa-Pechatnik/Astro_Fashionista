@@ -10,6 +10,7 @@
     --color-grey-dark: #333333;
     --color-gray: #747474;
     --color-grey2: #999999;
+    --color-icon3: #9C9C9C;
     
 
     --font-Fraunces: "Fraunces-VF", "Fraunces", Georgia, "Century Schoolbook L", serif;
@@ -19,7 +20,7 @@
     /* 
     icon1: #191919: черный
     icon2: #6995B1: фейсбук хочер
-    icon3: #9C9C9C: серый 
+    
     */
 
     --width-container: 1806px;
