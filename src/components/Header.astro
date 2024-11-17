@@ -1,74 +1,295 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "/public/logo.svg";
 ---
 <header class="header">
     <div class="container">
-    <section class="header-top">
-        <nav class="nav-social" aria-label="menu-social">
-            <ul class="nav-social-list">
-                <li class="social-item"><a class="social-item-link" href="#"><i class="icon-facebook"></i></a></li>
-                <li class="social-item"><a class="social-item-link" href="#"><i class="icon-instagram"></i></a></li>
-                <li class="social-item"><a class="social-item-link" href="#"><i class="icon-linkedin"></i></a></li>
-                <li class="social-item"><a class="social-item-link" href="#"><i class="icon-twitter"></i></a></li>
-                <li class="social-item"><a class="social-item-link" href="#"><i class="icon-blogger"></i></a></li>
-            </ul>
-        </nav>
-        <p class="header-top__text-delivery text-capitalize">Free shipping on a purchase value of $200</p>
-        <a class="header-top__tel text-capitalize" href="tel:+57444110035"><span>Let's talk!</span> +57 444 11 00 35</a>
-    </section>
-
-    <section class="header-bottom">
-        <nav class="menu" aria-label="menu">
-            <ul class="menu-list">
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </nav>
-
-        <nav class="menu" aria-label="menu">
-            <ul class="menu-list">
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </nav>
-
-    </section>        
+        <section class="header-top">
+            <nav class="nav-social" aria-label="menu-social">
+                <ul class="nav-social-list">
+                    <li class="social-item"><a class="social-item-link" href="#"><i class="icon-facebook"></i></a></li>
+                    <li class="social-item"><a class="social-item-link" href="#"><i class="icon-instagram"></i></a></li>
+                    <li class="social-item"><a class="social-item-link" href="#"><i class="icon-linkedin"></i></a></li>
+                    <li class="social-item"><a class="social-item-link" href="#"><i class="icon-twitter"></i></a></li>
+                    <li class="social-item"><a class="social-item-link" href="#"><i class="icon-blogger"></i></a></li>
+                </ul>
+            </nav>
+            <p class="header-top__text-delivery text-capitalize">Free shipping on a purchase value of $200</p>
+            <a class="header-top__tel text-capitalize" href="tel:+57444110035"><span>Let's talk!</span> +57 444 11 00
+                35</a>
+        </section>
     </div>
-
+    <section class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-wrap">
+                <nav class="menu" aria-label="menu">
+                    <button class="menu-button">
+                        <ul class="menu-mob hamburger">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </button>
+                    <ul class="menu-list">
+                        <li class="menu-item"><a class="menu-item__link text-uppercase" href="#">Women</a></li>
+                        <li class="menu-item"><a class="menu-item__link text-uppercase" href="#">Men</a></li>
+                        <li class="menu-item"><a class="menu-item__link text-uppercase" href="#">Kids</a></li>
+                        <li class="menu-item"><a class="menu-item__link text-uppercase" href="#">Accessories</a></li>
+                    </ul>
+                </nav>
+                <div class="shop">
+                    <a class="logo" href="#">
+                        <Image class="logo-img" src={logo} alt="logo" width={300} height={56} />
+                    </a>
+                    <nav class="nav-shop" aria-label="navigation shopping">
+                        <ul class="nav-shop-list">
+                            <li class="nav-shop-item">
+                                <a class="nav-shop-item__link" href="#"><i class="icon-search"></i></a>
+                            </li>
+                            <li class="nav-shop-item">
+                                <a class="nav-shop-item__link" href="#"><i class="icon-user"></i></a>
+                            </li>
+                            <li class="nav-shop-item">
+                                <a class="nav-shop-item__link" href="#"><i class="icon-favorites"></i></a>
+                            </li>
+                            <li class="nav-shop-item">
+                                <a class="nav-shop-item__link" href="#"><i class="icon-shop-cart"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
 </header>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {  
+    let menuItems = document.querySelectorAll('.menu-mob');  
+    
+    menuItems.forEach(function(menu) {  
+        menu.addEventListener('click', function() {  
+            this.classList.toggle('active');  
+        });  
+    });  
+});
+</script>
 <style>
     .header-top {
         padding: 16px 0;
         display: flex;
         justify-content: space-between;
+        gap: var(--indent-min);
     }
-.nav-social-list {
-    width: 162px;
-    display: flex;
-    justify-content: space-between;
-}
-.social-item-link {
-    font-family: 'icomoon';
-    font-size: 12px;
-    color: var(--color-icon3);
-}
 
-.header-top__text-delivery {
-    font-family: var(--font-Inter);
-font-weight: 400;
-font-size: 14px;
-color: var(--color-icon3);
-}
+    .nav-social-list {
+        width: 162px;
+        display: flex;
+        justify-content: space-between;
+    }
 
-.header-top__tel {
-    font-family: var(--font-Inter);
-font-weight: 400;
-font-size: 14px;
-color: var(--color-icon3);
-}
+    .social-item-link,
+    .nav-shop-item__link {
+        font-family: 'icomoon';
+        font-size: 12px;
+        color: var(--color-icon3);
+    }
+
+    .header-top__text-delivery {
+        font-family: var(--font-Inter);
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--color-icon3);
+    }
+
+    .header-top__tel {
+        font-family: var(--font-Inter);
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--color-icon3);
+    }
+
+    .social-item-link:is(:hover, :focus),
+    .header-top__tel:is(:hover, :focus),
+    .nav-shop-item__link:is(:hover, :focus) {
+        color: var(--color-icon2);
+    }
+
+    .header-bottom {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-top: 1px solid var(--color-icon2);
+        border-bottom: 1px solid var(--color-icon2);
+    }
+
+    .header-bottom-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: 32px;
+    }
+
+    .menu {
+        max-width: 386px;
+        margin-right: clamp(0rem, -19.375rem + 31.25vw, 18.125rem);
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .menu-list {
+        max-width: inherit;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 32px;
+    }
+
+    .menu-item__link {
+        font-family: var(--font-Fraunces);
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--color-icon1);
+        transition: all 0.5s ease;
+    }
+
+    .menu-item__link:hover {
+        color: var(--color-green);
+        text-shadow: 2px 2px 2px var(--color-icon2);
+    }
+
+    .shop {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0 58px;
+    }
+
+    .logo-img {
+        width: clamp(8.75rem, -1.5675rem + 42.328vw, 18.75rem);
+        height: auto;
+    }
+
+    .nav-shop-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 32px;
+    }
+
+    @media (hover: hover) {
+        .social-item-link:is(:hover, :focus) {
+            color: var(--color-icon2);
+        }
+    }
+
+    @media (hover: none) {
+        .social-item-link:is(:hover, :focus) {
+            color: var(--color-icon2);
+        }
+    }
+
+    @media screen and (max-width: 991.98px) {
+        .header-bottom-wrap {
+            flex-direction: column;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .menu {
+            order: 3;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .menu-list {
+            justify-content: space-evenly;
+        }
+
+        .logo {
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        .header-top {
+            flex-wrap: wrap;
+        }
+
+        .header-top__text-delivery {
+            width: 100%;
+            order: 3;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 575.98px) {
+        .header-bottom-wrap {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+        }
+
+        .header-top__tel span,
+        .menu-list,
+        .logo,
+        .header-top__text-delivery {
+            display: none;
+        }
+
+        .header-bottom {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        .menu-button {
+            display: block;
+            background-color: transparent;
+            border: none;
+        }
+
+        .menu-mob {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 28px;
+            width: 40px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .menu-mob li {
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-grey-dark);
+            transition: all 1s ease;
+        }
+
+        .hamburger li:nth-of-type(1),
+        .hamburger li:nth-of-type(3) {
+            transform-origin: left;
+        }
+
+        .hamburger.activ li:nth-of-type(1) {
+            transform: rotate(45deg);
+        }
+
+        .hamburger.activ li:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        .hamburger.activ li:nth-of-type(3) {
+            transform: rotate(-45deg);
+        }
+        .shop {
+    justify-content: flex-end;
+        }
+    }
 </style>

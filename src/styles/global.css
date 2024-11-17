@@ -10,6 +10,8 @@
     --color-grey-dark: #333333;
     --color-gray: #747474;
     --color-grey2: #999999;
+    --color-icon1: #191919;
+    --color-icon2: #6995B1;
     --color-icon3: #9C9C9C;
     
 
@@ -17,11 +19,6 @@
     --font-Anybody: "Anybody-VF", "Anybody", "Arial Black", "Gadget", "Nimbus Sans L", sans-serif;
     --font-Inter: "Inter-VF", "Inter", "Tahoma", "Geneva", "Kalimati", sans-serif;
     --font-big: clamp(46.875rem, 8.7894rem + 53.4535vw, 69.125rem);
-    /* 
-    icon1: #191919: черный
-    icon2: #6995B1: фейсбук хочер
-    
-    */
 
     --width-container: 1806px;
     --indent-min: 18px;
