@@ -99,7 +99,7 @@ import photo2 from "./assets/images/kuva8.jpg";
     .arrivals-content-box {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: clamp(1.125rem, -0.5177rem + 4.8673vw, 2.5rem);
         max-width: 504px;
         min-width: 420px;
     }
@@ -109,13 +109,13 @@ import photo2 from "./assets/images/kuva8.jpg";
         width: 100%;
         display: block;
         font-weight: 700;
-        font-size: 36px;
+        font-size: clamp(1.25rem, 0.0553rem + 3.5398vw, 2.25rem);
         line-height: 140%;
     }
 
     .arrivals-content__text {
         font-weight: 300;
-        font-size: 18px;
+        font-size: clamp(0.875rem, 0.5763rem + 0.885vw, 1.125rem);
         line-height: 180%;
     }
 
@@ -154,7 +154,7 @@ import photo2 from "./assets/images/kuva8.jpg";
     .arrivals-photo__title {
         font-family: var(--font-Anybody);
         font-weight: 700;
-        font-size: clamp(2.625rem, -4.0613rem + 10.7843vw, 5.375rem);
+        font-size: clamp(42px, -4.0613rem + 10.7843vw, 86px);
         line-height: 100%;
         color: var(--color-black);
         writing-mode: vertical-rl;
@@ -197,5 +197,9 @@ import photo2 from "./assets/images/kuva8.jpg";
         .arrivals .box-lg {
             display: none;
         }
+
+        .arrivals-content-box {
+        min-width: 300px;
+    }
     }
 </style>
